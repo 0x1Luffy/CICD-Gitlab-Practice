@@ -1,0 +1,5 @@
+Note: 
+after adding Your Credentials plz change the file name to .env
+
+MONGO_URI=paste your mongo connection string here
+PORT=8080
