@@ -5,7 +5,7 @@ const cors = require('cors');
 const taskRoutes = require('./routes/taskRoutes'); // Import task routes
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 // Middleware
 app.use(cors());
