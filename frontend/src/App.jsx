@@ -7,19 +7,19 @@ function App() {
     const [title, setTitle] = useState('');
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/tasks')
+        axios.get('http://localhost:8080/api/tasks')
             .then(res => setTasks(res.data))
             .catch(err => console.error(err));
     }, []);
 
     const addTask = () => {
-        axios.post('http://localhost:3000/api/tasks', { title })
+        axios.post('http://localhost:8080/api/tasks', { title })
             .then(res => setTasks([...tasks, res.data]))
             .catch(err => console.error(err));
     };
 
     const deleteTask = (id) => {
-        axios.delete(`http://localhost:3000/api/tasks/${id}`)
+        axios.delete(`http://localhost:8080/api/tasks/${id}`)
             .then(() => setTasks(tasks.filter(task => task._id !== id)))
             .catch(err => console.error(err));
     };
