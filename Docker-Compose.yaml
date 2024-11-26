@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  backend: # this will build and start the backend conatiner
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" 
+    environment: 
+      - MONGO_URI=${MONGO_URI} 
+    depends_on:
+      - mongo
+
+  frontend: # this will build and start the frontend conatiner
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:5173" 
+
+  mongo:
+    image: mongo:5.0
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
