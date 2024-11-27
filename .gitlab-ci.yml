@@ -1,0 +1,22 @@
+stages:
+    - build
+    - test
+    - deploy
+
+build-the-application:
+    stage: build
+    script: 
+        - echo "Building the application..........."
+        - echo "Successfully Built."
+
+test-the-application:
+    stage: test
+    script: 
+        echo "Testing the application.............."
+        echo "Successfully Tested."
+
+deploy-the-application:
+    stage: deploy
+    script:
+        echo "Deploying on ............"
+        echo "Deplyoed."
