@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mern-k8-deployment
+  labels:
+    app: mern-k8-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mern-k8-deployment
+  template:
+    metadata:
+      labels:
+        app: mern-k8-deployment
+    spec:
+      containers:
+      - name: mern-app
+        image: cicd-gitlab-practice_frontend:latest
+        ports:
+        - containerPort: 3000
+
